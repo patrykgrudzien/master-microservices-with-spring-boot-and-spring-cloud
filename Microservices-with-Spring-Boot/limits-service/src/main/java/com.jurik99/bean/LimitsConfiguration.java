@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class LimitConfiguration {
+public class LimitsConfiguration {
 
     private int maximum;
     private int minimum;
