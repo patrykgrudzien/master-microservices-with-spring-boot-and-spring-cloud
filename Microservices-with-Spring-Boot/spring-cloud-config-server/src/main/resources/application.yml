@@ -5,7 +5,11 @@ spring:
     config:
       server:
         git:
-          uri: file://${user.home}/Projects/git-localconfig-repo/limits-service.yml
+          uri: file:///C:/Own Projects/local-config-git
+          # to access properties from the file above I need to go to:
+          # (http://localhost:8888/limits-service/default) -> explanation below
+          # /limits-service (it comes from the name of the *.yml file placed inside "local-config-git" directory)
+          # /default (is the name of the default Spring profile)
 
 server:
   port: 8888
