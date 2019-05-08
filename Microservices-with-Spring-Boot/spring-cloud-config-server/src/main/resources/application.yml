@@ -8,8 +8,18 @@ spring:
           uri: file:///C:/Own Projects/local-config-git
           # to access properties from the file above I need to go to:
           # (http://localhost:8888/limits-service/default) -> explanation below
+          #
           # /limits-service (it comes from the name of the *.yml file placed inside "local-config-git" directory)
           # /default (is the name of the default Spring profile)
+          #
+          # to access properties for "DEV" or "QA" environment, the link would look like the following:
+          # (http://localhost:8888/limits-service/dev)
+          # (http://localhost:8888/limits-service/qa)
+          #
+          # configuration files look like the following:
+          # limits-service.yml
+          # limits-service-dev.yml
+          # limits-service-qa.yml
 
 server:
   port: 8888
