@@ -20,8 +20,12 @@ public class CurrencyExchangeController {
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue(@PathVariable("from") final String from,
 	                                           @PathVariable("to") final String to) {
+
 		final String port = Optional.ofNullable(environment.getProperty("server.port"))
 		                            .orElseThrow(() -> new RuntimeException("Cannot find specified property!"));
-		return new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65L), Integer.parseInt(port));
+
+		final ExchangeValue exchangeValue = new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65L));
+		exchangeValue.setPort(Integer.parseInt(port));
+		return exchangeValue;
 	}
 }
