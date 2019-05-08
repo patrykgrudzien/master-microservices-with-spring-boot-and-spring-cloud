@@ -5,16 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 @RestController
 public class CurrencyExchangeController {
 
 	private final Environment environment;
+	private final ExchangeValueRepository repository;
 
-	public CurrencyExchangeController(final Environment environment) {
+	public CurrencyExchangeController(final Environment environment, final ExchangeValueRepository repository) {
 		this.environment = environment;
+		this.repository = repository;
 	}
 
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
@@ -24,7 +25,7 @@ public class CurrencyExchangeController {
 		final String port = Optional.ofNullable(environment.getProperty("server.port"))
 		                            .orElseThrow(() -> new RuntimeException("Cannot find specified property!"));
 
-		final ExchangeValue exchangeValue = new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65L));
+		final ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 		exchangeValue.setPort(Integer.parseInt(port));
 		return exchangeValue;
 	}

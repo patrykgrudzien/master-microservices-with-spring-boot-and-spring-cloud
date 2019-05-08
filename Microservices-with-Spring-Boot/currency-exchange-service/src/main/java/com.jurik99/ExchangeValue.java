@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class ExchangeValue {
 
 	@Id
-	private long id;
+	private Long id;
 
 	@Column(name = "currency_from") // changing name of this column as "from" is a reserved keyword in the SQL
 	private String from;
