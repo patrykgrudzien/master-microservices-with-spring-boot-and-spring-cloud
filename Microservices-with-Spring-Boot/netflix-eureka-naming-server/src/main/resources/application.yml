@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: netflix-eureka-naming-server
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    # For now, I don't want the server itself to register with the naming server
+    register-with-eureka: false
