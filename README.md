@@ -9,7 +9,7 @@
 | | | |
 | `Limits service` | 8080, 8081, ... |
 | `Currency Exchange Service` | 8000, 8001, 8002, ... |
-| `Currency Conversion Service` | 8100, 8101, 8102, ... |
+| `Currency Conversion(Calculation) Service` | 8100, 8101, 8102, ... |
 | | | |
 | | | |
 | `Netflix Zuul API Gateway Server` | 8765 |
