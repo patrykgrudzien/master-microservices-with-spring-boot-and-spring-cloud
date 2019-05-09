@@ -19,6 +19,7 @@
         <module>currency-exchange-service</module>
         <module>currency-conversion-service</module>
         <module>netflix-eureka-naming-server</module>
+        <module>netflix-zuul-api-gateway-server</module>
     </modules>
 
     <properties>
