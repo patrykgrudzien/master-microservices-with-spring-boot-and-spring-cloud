@@ -9,3 +9,5 @@ eureka:
   client:
     # For now, I don't want the server itself to register with the naming server
     register-with-eureka: false
+    # Indicates whether this client should fetch eureka registry information from eureka server
+    fetch-registry: false
