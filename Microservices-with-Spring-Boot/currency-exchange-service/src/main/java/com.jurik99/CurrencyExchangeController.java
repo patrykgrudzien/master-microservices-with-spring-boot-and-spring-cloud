@@ -1,5 +1,7 @@
 package com.jurik99;
 
+import lombok.extern.log4j.Log4j2;
+
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+@Log4j2
 @RestController
 public class CurrencyExchangeController {
 
@@ -27,6 +30,9 @@ public class CurrencyExchangeController {
 
 		final ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 		exchangeValue.setPort(Integer.parseInt(port));
+
+		log.info("{}", exchangeValue);
+
 		return exchangeValue;
 	}
 }

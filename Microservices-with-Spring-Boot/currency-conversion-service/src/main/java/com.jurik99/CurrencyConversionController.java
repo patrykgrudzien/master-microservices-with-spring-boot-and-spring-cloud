@@ -1,5 +1,7 @@
 package com.jurik99;
 
+import lombok.extern.log4j.Log4j2;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Log4j2
 @RestController
 public class CurrencyConversionController {
 
@@ -53,6 +56,8 @@ public class CurrencyConversionController {
 	                                                   @PathVariable final BigDecimal quantity) {
 
 		final CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
+
+		log.info("{}", response);
 
 		final BigDecimal conversionMultiple = response.getConversionMultiple();
 		return new CurrencyConversionBean(response.getId(), response.getFrom(), response.getTo(),
