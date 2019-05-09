@@ -46,6 +46,8 @@ public class CurrencyConversionController {
 	 * 2) Has integration with Client Side Load Balancing Framework (Ribbon)
 	 */
 	@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
+	// http://localhost:8765/currency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/1000
+	// (this call using URL above will go through API Gateway TWICE)
 	public CurrencyConversionBean convertCurrencyFeign(@PathVariable final String from,
 	                                                   @PathVariable final String to,
 	                                                   @PathVariable final BigDecimal quantity) {
