@@ -30,6 +30,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+
+        <!-- Spring Cloud Starter Zipkin (thanks to that dependency, we'll be able to start logging Sleuth messages in the format that Zipkin understands) -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
