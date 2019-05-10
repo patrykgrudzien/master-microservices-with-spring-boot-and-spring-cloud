@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///C:/Own Projects/local-config-git
+          uri: file:///home/jurik99/Projects/master-microservices-with-spring-boot-and-spring-cloud/Microservices-with-Spring-Boot/local-config-git
           # to access properties from the file above I need to go to:
           # (http://localhost:8888/limits-service/default) -> explanation below
           #
