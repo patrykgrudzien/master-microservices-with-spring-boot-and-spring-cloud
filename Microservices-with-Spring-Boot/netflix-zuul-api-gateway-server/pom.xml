@@ -31,7 +31,12 @@
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
 
-        <!-- Spring Cloud Starter Zipkin (thanks to that dependency, we'll be able to start logging Sleuth messages in the format that Zipkin understands) -->
+        <!--
+         Spring Cloud Starter Zipkin
+         a) Thanks to that dependency, we'll be able to start logging Sleuth messages in the format that Zipkin understands
+         b) We observed that the tracing information is printed in logs but not exported.
+            We can export them to Zipkin server so that we can visualize traces in Zipkin Server UI Dashboard.
+         -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
